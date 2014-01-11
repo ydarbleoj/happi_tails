@@ -1,5 +1,8 @@
 require './client'
 require './shelter'
+require 'pry'
+
+shelter = Shelter.new('Joel', 'Otis')
 
 class Animal
 
@@ -10,11 +13,12 @@ class Animal
     @age = age
     @gender = gender
     @species = species 
-    @toys = toys 
+    @toys = [] 
   end
 
 end 
 
+animal = Animal.new('Otis', 5, 'Male', 'Canis', 'ball')
 
   def menu prompt 
     puts 'clear'
@@ -41,7 +45,10 @@ end
       print "Age: " ; age = gets.chomp
       print "Gender: "; gender = gets.chomp
       print "Species: "; species = gets.chomp
-      print "Toys: "; toys = gets.chomp 
+      print "Toys: "; toys = gets.chomp
+
+      shelter.animals << Animal.new(name, age, gender, species, toys)
+     
     when "4"
       print "Enter client info: "
       print "Name: "; name = gets.chomp
