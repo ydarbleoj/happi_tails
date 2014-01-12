@@ -1,3 +1,4 @@
+require './main'
 require './animal'
 require './shelter'
 
@@ -8,8 +9,8 @@ class Client
   def initialize(name, age, number_children, number_pets)
     @name = name 
     @age = age
-    @number_children = number_children
-    @number_pets = number_pets
+    @number_children = []
+    @number_pets = []
   end 
 
 end 
